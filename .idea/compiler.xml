@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="rest-jpa-devops-starter" options="-endorseddirs &quot;C:\Users\Emil\OneDrive - EFIF\Datamatiker\sem3\week4(CA-1)\ca-1\target/endorsed&quot;" />
+      <module name="rest-jpa-devops-starter" options="-endorseddirs &quot;C:\Users\bueko\Documents\Sem3\Week37 CA1\target/endorsed&quot;" />
     </option>
   </component>
 </project>
