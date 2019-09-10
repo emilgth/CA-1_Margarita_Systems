@@ -2,14 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cars</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-    <h1 class="">CARS FOR SALE - BUY NOW</h1>
-    <div id="table"></div>
+    <h1 class="mt-2 mb-0 p-5 rounded-top shadow" style="background-color: #007bff; color: whitesmoke">CARS FOR SALE - BUY NOW</h1>
+    <div class="p-5 rounded-bottom shadow" style="background-color: whitesmoke">
+        <div id="table"></div>
+        <p>Filter by max price:</p>
+        <form class="form-inline">
+            <label for="filterByPriceInput">
+                <input id="filterByPriceInput" class="form-control mr-2" placeholder="Enter max price here"
+                       type="number">
+            </label>
+            <button id="filterByPriceButton" class="btn btn-primary" type="button">Click Here</button>
+        </form>
+    </div>
 </div>
 <script src="carsscript.js"></script>
 </body>

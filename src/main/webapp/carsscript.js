@@ -1,5 +1,7 @@
 const tableDiv = document.getElementById("table");
 const url = "http://localhost:8080/ca1/api/car/all";
+const filterByPriceInput = document.getElementById("filterByPriceInput");
+const filterByPriceButton = document.getElementById("filterByPriceButton");
 
 function createTable() {
     fetch(url)
