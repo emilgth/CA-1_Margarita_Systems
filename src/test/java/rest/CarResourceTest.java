@@ -23,6 +23,7 @@ import java.net.URI;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 
 //Uncomment the line below, to temporarily disable this test
 //@Disabled
@@ -106,5 +107,15 @@ public class CarResourceTest {
         .assertThat()
         .statusCode(HttpStatus.OK_200.getStatusCode())
         .body("count", equalTo(3));
+    }
+
+    @Test
+    public void getAllCarsTest() throws Exception {
+        given()
+                .contentType("application/json")
+                .get("car/all").then()
+                .assertThat()
+                .statusCode(HttpStatus.OK_200.getStatusCode())
+                .body("size()", is(3));
     }
 }
