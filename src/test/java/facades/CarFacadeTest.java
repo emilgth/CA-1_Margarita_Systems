@@ -70,10 +70,14 @@ public class CarFacadeTest {
     public void tearDown() {
     }
 
-    // TODO: Delete or change this method 
     @Test
-    public void testAFacadeMethod() {
+    public void getCarEntityCountTest() {
         assertEquals(3, facade.getCarEntityCount(), "Expects two rows in the database");
     }
 
+    @Test
+    //todo maybe make a more interesting test here
+    void getAllCarsTest() {
+        assertEquals(3, facade.getAllCars().size());
+    }
 }

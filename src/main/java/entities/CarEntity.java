@@ -1,11 +1,7 @@
 package entities;
 
+import javax.persistence.*;
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(name = "CarEntity.deleteAllRows", query = "DELETE from CarEntity")
@@ -19,6 +15,24 @@ public class CarEntity implements Serializable {
     private String make;
     private String model;
     private int price;
+
+    public CarEntity() {
+    }
+
+    public CarEntity(int year, String make, String model, int price) {
+        this.year = year;
+        this.make = make;
+        this.model = model;
+        this.price = price;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public int getYear() {
         return year;
@@ -51,24 +65,4 @@ public class CarEntity implements Serializable {
     public void setPrice(int price) {
         this.price = price;
     }
-
-    public CarEntity(int year, String make, String model, int price) {
-        this.year = year;
-        this.make = make;
-        this.model = model;
-        this.price = price;
-    }
-
-    public CarEntity() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
 }

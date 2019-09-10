@@ -14,11 +14,7 @@ import javax.ws.rs.core.MediaType;
 @Path("car")
 public class CarResource {
 
-    private static final EntityManagerFactory EMF = EMF_Creator.createEntityManagerFactory(
-                "pu",
-                "jdbc:mysql://localhost:3307/ca1-test",
-                "dev",
-                "ax2",
+    private static final EntityManagerFactory EMF = EMF_Creator.createEntityManagerFactory(EMF_Creator.DbSelector.DEV,
                 EMF_Creator.Strategy.CREATE);
     private static final CarFacade FACADE =  CarFacade.getFacadeExample(EMF);
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
@@ -28,6 +24,7 @@ public class CarResource {
     public String demo() {
         return "{\"msg\":\"Hello World\"}";
     }
+
     @Path("count")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -35,5 +32,12 @@ public class CarResource {
         long count = FACADE.getCarEntityCount();
         //System.out.println("--------------->"+count);
         return "{\"count\":"+count+"}";  //Done manually so no need for a DTO
+    }
+
+    @GET
+    @Path("all")
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getAllCars() {
+        return GSON.toJson(FACADE.getAllCars());
     }
 }
