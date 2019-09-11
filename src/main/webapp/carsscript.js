@@ -41,7 +41,7 @@ function sortByPrice() {
 
 function generateTable(data) {
     let thead = data[0];
-    let table = "<table class='table rounded' style='background-color: white'><thead class='rounded'><tr>";
+    let table = "<table class='table table-hover rounded' style='background-color: white'><thead class='rounded'><tr>";
     for (let value in thead) {
         table += `<th>${value}</th>`;
     }
