@@ -4,6 +4,7 @@ import entities.GroupMember;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import java.util.List;
 
 public class GroupMemberFacade {
 
@@ -31,19 +32,11 @@ public class GroupMemberFacade {
         return emf.createEntityManager();
     }
 
-    public static void main(String[] args) {
-        EntityManager em = emf.createEntityManager();
-
-        GroupMember Matias = new GroupMember("Matias Bue","Koefoed","cph-mk567","Red");
-        GroupMember Emil = new GroupMember("Emil","Gotthelf Tranberg Hansen","cph-eh130","Red");
-        GroupMember Karl = new GroupMember("Karl Erik Viktor","Frödin","cph-kf112","Red");
+    public List<GroupMember> getAllGroupMembers(){
+        EntityManager em = getEntityManager();
 
         try {
-            em.getTransaction().begin();
-            em.persist(Matias);
-            em.persist(Emil);
-            em.persist(Karl);
-            em.getTransaction().commit();
+            return em.createQuery("select gm from GroupMember gm",GroupMember.class).getResultList();
         } finally {
             em.close();
         }
