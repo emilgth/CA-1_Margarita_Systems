@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
+<body onload="createTable()">
 <div class="container">
     <div class="mt-2 mb-0 p-5 rounded-top shadow" style="background-color: lightcoral; color: whitesmoke"><h1>Margarita
         Systems CA-1</h1>
     <h2>Bornholm</h2>
     </div>
     <div class="p-5 rounded-bottom shadow" style="background-color: whitesmoke">
+        <div id="tableDiv"></div>
+        <button class="btn btn-primary mb-4" id="btn1" onclick="createTable()">Reload Names</button>
         <h4>Links</h4>
         <a href="whoDidWhat.html">Who Did What?</a><br>
         <a href="jokePage.html">Our Cool Jokes</a><br>
@@ -20,6 +22,6 @@
         <a href="https://github.com/emilgth/CA-1_Margarita_Systems">Github</a><br>
     </div>
 </div>
-
+<script src="indexscript.js"></script>
 </body>
 </html>
