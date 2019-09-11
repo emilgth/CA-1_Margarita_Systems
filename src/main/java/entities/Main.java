@@ -19,6 +19,9 @@ public class Main {
 
         try {
             em.getTransaction().begin();
+            em.persist(new CarEntity(1234, "Blart", "Blocus", 12345));
+            em.persist(new CarEntity(1423, "Dang", "Mamba", 53454));
+            em.persist(new CarEntity(3234, "Dubi", "La", 4534));
             em.persist(Matias);
             em.persist(Emil);
             em.persist(Karl);
@@ -26,6 +29,7 @@ public class Main {
         } finally {
             em.close();
         }
+
     }
 
 }
