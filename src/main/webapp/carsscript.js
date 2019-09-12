@@ -1,5 +1,5 @@
 const tableDiv = document.getElementById("table");
-const url = "http://localhost:8080/ca1/api/car/all";
+const url = "https://buehub.com/rest-jpa-devops-starter/api/car/all";
 const filterByPriceInput = document.getElementById("filterByPriceInput");
 const filterByPriceButton = document.getElementById("filterByPriceButton");
 const sortByPriceButton = document.getElementById("sortByPriceButton");

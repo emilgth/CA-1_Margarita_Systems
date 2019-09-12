@@ -1,7 +1,7 @@
 const tableDiv = document.getElementById("table");
-const url = "http://localhost:8080/ca1/api/jokes/all";
-const url2 = "http://localhost:8080/ca1/api/jokes/";
-const url3 = "http://localhost:8080/ca1/api/jokes/random";
+const url = "https://buehub.com/rest-jpa-devops-starter/api/jokes/all";
+const url2 = "https://buehub.com/rest-jpa-devops-starter/api/jokes/";
+const url3 = "https://buehub.com/rest-jpa-devops-starter/api/jokes/random";
 const table = "<table class='table table-hover rounded' style='background-color: white'><thead class='rounded'><tr>";
 const ths = "<th>All the jokes<th/><tr/><thead/><tbody>";
 const ths2 = "<th>A random joke<th/><tr/><thead/><tbody>";

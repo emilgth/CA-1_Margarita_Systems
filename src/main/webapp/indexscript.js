@@ -2,7 +2,7 @@ const tableDiv = document.getElementById("tableDiv");
 
 function createTable() {
 
-    const url = "http://localhost:8080/ca1/api/groupmembers/all";
+    const url = "https://buehub.com/rest-jpa-devops-starter/api/groupmembers/all";
     const table = "<table class='table table-hover rounded' style='background-color: white'><thead class='rounded'><tr>";
     const ths = "<th>Name</th><th>Student ID</th><th>Color (green, yellow, red)</th></tr></thead><tbody>";
 
