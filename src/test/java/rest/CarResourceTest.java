@@ -1,7 +1,6 @@
 package rest;
 
 import entities.CarEntity;
-import entities.RenameMe;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
 import org.glassfish.grizzly.http.server.HttpServer;

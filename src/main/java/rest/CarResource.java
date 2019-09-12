@@ -2,9 +2,7 @@ package rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import entities.RenameMe;
 import facades.CarFacade;
-import facades.FacadeExample;
 import utils.EMF_Creator;
 
 import javax.persistence.EntityManagerFactory;

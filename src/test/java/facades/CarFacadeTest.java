@@ -1,7 +1,6 @@
 package facades;
 
 import entities.CarEntity;
-import entities.RenameMe;
 import org.junit.jupiter.api.*;
 import utils.EMF_Creator;
 import utils.EMF_Creator.DbSelector;
