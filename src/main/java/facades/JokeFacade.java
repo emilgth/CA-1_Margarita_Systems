@@ -48,17 +48,31 @@ public class JokeFacade {
 
     public List<Joke> getAllJokes() {
         EntityManager em = emf.createEntityManager();
-        return em.createQuery("SELECT j from Joke j", Joke.class).getResultList();
+        try {
+            return em.createQuery("SELECT j from Joke j", Joke.class).getResultList();
+        } finally {
+            em.close();
+
+        }
     }
 
-    public Joke getJokeById(long id) {
+    public Joke getJokeById(Integer id) {
         EntityManager em = emf.createEntityManager();
-        return em.find(Joke.class, id);
+        try {
+            Joke joke = em.find(Joke.class, id);
+            if (joke == null){
+                return  new Joke("Wow bro, there was like no joke to find or whatever", true, 2021);
+            } else {
+                return joke;
+            }
+        } finally {
+            em.close();
+        }
     }
 
     public Joke getRandomJoke(){
         EntityManager em = emf.createEntityManager();
-        List<Joke> jokes = em.createQuery("SELECT j from Joke as j order by random()", Joke.class).getResultList();
+        List<Joke> jokes = em.createQuery("SELECT j from Joke as j", Joke.class).getResultList();
         int size = jokes.size();
         Random random = new Random();
         int number = random.nextInt(size);

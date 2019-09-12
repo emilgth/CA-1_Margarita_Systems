@@ -45,7 +45,7 @@ public class JokeResource {
     @Path("/{id}")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public String getJokeId(@PathParam("id") long id) {
+    public String getJokeId(@PathParam("id") Integer id) {
         return gson.toJson(FACADE.getJokeById(id));
     }
 
