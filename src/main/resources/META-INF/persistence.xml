@@ -8,6 +8,7 @@
         <class>entities.RenameMe</class>
         <class>entities.GroupMember</class>
         <class>entities.CarEntity</class>
+        <class>entities.Joke</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
         <properties>
