@@ -25,7 +25,7 @@ function createFilteredTable() {
             if (filteredArray.length !== 0) {
                 generateTable(filteredArray);
             } else {
-                tableDiv.innerHTML = "<p>Der findes ingen biler til den ønskede pris</p>"
+                tableDiv.innerHTML = "<p>There is no cars at the desired price point</p>"
             }
         });
 }
