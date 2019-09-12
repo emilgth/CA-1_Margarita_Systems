@@ -1,5 +1,6 @@
 package facades;
 
+import dtos.JokeDTO;
 import utils.EMF_Creator;
 import entities.Joke;
 
@@ -73,20 +74,15 @@ public class JokeFacadeTest {
     }
 
     @Test
-    public void testJokeCount() {
-        assertEquals(4, facade.getJokeCount(), "Expects four rows in the database");
-    }
-
-    @Test
     public void testGetAllJokes() {
-        List<Joke> jokes = facade.getAllJokes();
+        List<JokeDTO> jokes = facade.getAllJokes();
         assertEquals(4, jokes.size());
     }
 
     @Test
     public void testGetRandomJoke() {
-        Joke joke = facade.getRandomJoke();
-        Joke joke1 = joke;
+        JokeDTO joke = facade.getRandomJoke();
+        JokeDTO joke1 = joke;
         while (joke == joke1) {
             joke1 = facade.getRandomJoke();
         }
