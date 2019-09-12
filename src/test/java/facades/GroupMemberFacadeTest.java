@@ -1,5 +1,6 @@
 package facades;
 
+import dtos.GroupMemberDTO;
 import entities.GroupMember;
 import org.junit.jupiter.api.*;
 import utils.EMF_Creator;
@@ -51,7 +52,7 @@ public class GroupMemberFacadeTest {
 
     @Test
     void GetAllGroupMembers() {
-        List<GroupMember> gms = facade.getAllGroupMembers();
+        List<GroupMemberDTO> gms = facade.getAllGroupMembers();
         assertEquals(3,gms.size());
     }
 }
