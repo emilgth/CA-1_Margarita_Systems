@@ -35,27 +35,25 @@ public class JokeResource {
         return "{\"msg\":\"Hello World\"}";
     }
 
-    @Path("alljokes")
+    @Path("all")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public String getRenameMeCount() {
-        long count = FACADE.getRandomJoke();
-        return "{\"count\":"+count+"}";
+    public String getAllJokes() {
+        return gson.toJson(FACADE.getAllJokes());
     }
 
-    @Path("jokeid")
+    @Path("/{id}")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public String getRenameMeCount() {
-        long count = FACADE.getRandomJoke();
-        return "{\"count\":"+count+"}";
+    public String getJokeId(@PathParam("id") long id) {
+        return gson.toJson(FACADE.getJokeById(id));
     }
 
-    @Path("randomjoke")
+    @Path("random")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public String () {
-        long count = FACADE.getRandomJoke();
-        return "{\"count\":"+count+"}";
+    public String getRandomJoke () {
+        return gson.toJson(FACADE.getRandomJoke());
     }
-}
+    }
+

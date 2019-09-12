@@ -67,18 +67,4 @@ public class JokeFacade {
     }
 
 
-    public static void main() {
-        EntityManager em = emf.createEntityManager();
-        try {
-            em.getTransaction().begin();
-            em.persist(new Joke("A mexican magician was doing a magic trick. He said, Uno, Dose, and he disappeared without a trace", true, 1993 ));
-            em.persist(new Joke("What do you get if you cross a rethoric question with a joke?", false, 2019));
-            em.persist(new Joke("There’s nothing wrong with you that an expensive operation can’t prolong.", true, 1974));
-            em.persist(new Joke("Why is Juan so happy? He finally figured out himself. Huh, I  guess it takes Juan to know Juan", true, 1982));
-            em.getTransaction().commit();
-        } finally {
-            em.close();
-        }
-    }
-    
 }
