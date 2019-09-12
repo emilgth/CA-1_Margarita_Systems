@@ -1,9 +1,11 @@
 package facades;
 
+import dtos.GroupMemberDTO;
 import entities.GroupMember;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GroupMemberFacade {
@@ -32,11 +34,14 @@ public class GroupMemberFacade {
         return emf.createEntityManager();
     }
 
-    public List<GroupMember> getAllGroupMembers(){
+    public List<GroupMemberDTO> getAllGroupMembers(){
         EntityManager em = getEntityManager();
 
         try {
-            return em.createQuery("select gm from GroupMember gm",GroupMember.class).getResultList();
+            List<GroupMember> query = em.createQuery("select gm from GroupMember gm",GroupMember.class).getResultList();
+            List<GroupMemberDTO> gmDTOs = new ArrayList<>();
+            query.forEach(groupMember -> gmDTOs.add(new GroupMemberDTO(groupMember)));
+            return gmDTOs;
         } finally {
             em.close();
         }

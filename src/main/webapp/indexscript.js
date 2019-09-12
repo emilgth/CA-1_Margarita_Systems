@@ -9,7 +9,7 @@ function createTable() {
     fetch(url)
         .then(response => response.json())
         .then(data => tableDiv.innerHTML = table + ths + data.map(el=> '<tr>' +
-                '<td>' + el.firstName + " " + el.lastName + '</td>' +
+                '<td>' + el.firstName + ' ' + el.lastName + '</td>' +
                 '<td>' + el.studentID + '</td>' +
                 '<td>' + el.color + '</td>' + '</tr>').join('') +
                 '</tbody></table>');
