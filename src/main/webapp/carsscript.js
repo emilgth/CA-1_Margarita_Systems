@@ -19,11 +19,14 @@ function createFilteredTable() {
             let carArray = Array.from(data);
             let filteredArray = carArray.filter(function (car) {
                 if (car.price < filterByPriceInput.value) {
-                    console.log("hey");
                     return car;
                 }
             });
-            generateTable(filteredArray);
+            if (filteredArray.length !== 0) {
+                generateTable(filteredArray);
+            } else {
+                tableDiv.innerHTML = "<p>There is no cars at the desired price point</p>"
+            }
         });
 }
 
@@ -40,21 +43,23 @@ function sortByPrice() {
 }
 
 function generateTable(data) {
-    let thead = data[0];
-    let table = "<table class='table table-hover rounded' style='background-color: white'><thead class='rounded'><tr>";
-    for (let value in thead) {
-        table += `<th>${value}</th>`;
-    }
-    table += '</tr></thead><tbody>';
-    for (let element of data) {
-        table += '<tr>';
-        for (let value in element) {
-            table += `<td>${element[value]}</td>`;
+
+        let thead = data[0];
+        let table = "<table class='table table-hover rounded' style='background-color: white'><thead class='rounded'><tr>";
+        for (let value in thead) {
+            table += `<th>${value}</th>`;
         }
-        table += '</tr>'
-    }
-    table += '</tbody></table>';
-    tableDiv.innerHTML = table;
+        table += '</tr></thead><tbody>';
+        for (let element of data) {
+            table += '<tr>';
+            for (let value in element) {
+                table += `<td>${element[value]}</td>`;
+            }
+            table += '</tr>'
+        }
+        table += '</tbody></table>';
+        tableDiv.innerHTML = table;
+
 }
 
 createTableOnLoad();
